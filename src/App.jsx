@@ -1,19 +1,17 @@
 import User from './user.json';
+import Description from './components/description';
+import Stats from './components/stats';
 
-const info = {
-  username : User.username,
-  tag : User.tag,
-  location: User.location,
-  avatar: User.avatar,
-  stats:User.stats,
-}
-console.log(info);
+const keys = Object.keys(User);
+console.log(keys);
 
 function App() {
   return (
-    <div className="App">
-
+    <div className='profile'>
+      <Description/>
+      <Stats/>
     </div>
+
   );
 }
 
