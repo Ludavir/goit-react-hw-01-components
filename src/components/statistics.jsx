@@ -3,9 +3,9 @@ import Data from './../json/data.json';
 const ItemElement = () => {
     return (
         
-        Data.map((element, index) => {
+        Data.map((element) => {
             return (
-                <li className='item'>
+                <li key={element.id} className='item'>
                     <span className="label">{element.label}</span>
                     <br />
                     <span className="percentage">{element.percentage}</span>

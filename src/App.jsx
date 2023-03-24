@@ -1,9 +1,10 @@
 import User from './json/user.json';
 import Data from './json/data.json';
-import Friends from './json/friends.json';
+
 import Description from './components/profile';
 import Statistics from './components/statistics';
 import FriendList from './components/FriendList';
+import TransactionHistory from './components/TransactionHistory';
 
 const keys = Object.keys(User);
 console.log(keys);
@@ -26,6 +27,7 @@ function App() {
       title="Upload stats"
       stats={Data}/>
       <FriendList/>
+      <TransactionHistory/>
     </div>
 
   );

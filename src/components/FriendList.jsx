@@ -4,9 +4,9 @@ const FriendListItem = (avatar, name, isOnline, altText) => {
     
     return (
 
-        Friends.map((element, index) => {
+        Friends.map((element) => {
             return (
-                <li li className='item'>
+                <li key={element.id} className='item'>
                     <span className="status">
                         {element.isOnline ? "Is ONline" : "is OFFLine"}
                     </span>
