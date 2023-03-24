@@ -15,7 +15,6 @@ const FriendListItem = (avatar, name, isOnline, altText) => {
                 </li>
             )
         })
-
     )
 };
 
@@ -29,7 +28,6 @@ const FriendList = () => {
             isOnline={Friends.isOnline}
             altText="User avatar"
             />
-
         </ul>
     )
 };

@@ -4,7 +4,7 @@ import Data from './json/data.json';
 import Description from './components/profile';
 import Statistics from './components/statistics';
 import FriendList from './components/FriendList';
-import TransactionHistory from './components/TransactionHistory';
+import TransactionHistory from './components/transactions';
 
 const keys = Object.keys(User);
 console.log(keys);
