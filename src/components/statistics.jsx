@@ -2,25 +2,21 @@ import Data from './../json/data.json';
 
 const ItemElement = () => {
     return (
-        <li className='item'>
-
-            {
-                Data.map((element, index) => {
-                    return (
-                        <li>
-                            <span key={index} className="label">{element.label}</span>
-                            <br />
-                            <span key={index} className="percentage">{element.percentage}</span>
-                        </li>
-                    )
-                })
-            }
-
-        </li>
+        
+        Data.map((element, index) => {
+            return (
+                <li className='item'>
+                    <span className="label">{element.label}</span>
+                    <br />
+                    <span className="percentage">{element.percentage}</span>
+                </li>
+            )
+        })
+        
     )
 };
 
-const Statistics = ({title}) => {
+const Statistics = ({title, stats}) => {
     return (
         <section className="statistics">
             <h2 className="title">{title}</h2>
