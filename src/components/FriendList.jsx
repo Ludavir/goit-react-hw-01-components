@@ -1,4 +1,5 @@
 import Friends from './../json/friends.json';
+import PropTypes from "prop-types";
 
 const FriendListItem = (avatar, name, isOnline, altText) => {
     
@@ -31,5 +32,11 @@ const FriendList = () => {
         </ul>
     )
 };
+
+FriendList.propTypes = {
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    isOnline: PropTypes.bool.isRequired,
+}
 
 export default FriendList

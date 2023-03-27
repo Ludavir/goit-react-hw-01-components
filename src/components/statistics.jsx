@@ -1,4 +1,5 @@
 import Data from './../json/data.json';
+import PropTypes from "prop-types";
 
 const ItemElement = () => {
     return (
@@ -16,7 +17,7 @@ const ItemElement = () => {
     )
 };
 
-const Statistics = ({title, stats}) => {
+const Statistics = ({title, }) => {
     return (
         <section className="statistics">
             <h2 className="title">{title}</h2>
@@ -28,6 +29,10 @@ const Statistics = ({title, stats}) => {
     )
 };
 
+Statistics.propTypes = {
+    title: PropTypes.string.isRequired,
+    stats: PropTypes.object.isRequired,
+}
 
 export default Statistics
 

@@ -1,4 +1,5 @@
 import Transaction from '../json/transactions.json';
+import PropTypes from "prop-types";
 
 const TransactionItem = () => {
     
