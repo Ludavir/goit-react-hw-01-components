@@ -1,5 +1,6 @@
 import User from './../json/user.json';
 import PropTypes from "prop-types";
+import { Box__one, Information_box, Information_box_children, Picture } from './profileStyles';
 
 const keys = Object.keys(User);
 console.log(keys);
@@ -8,8 +9,8 @@ const Description = ({username, tag, location, avatar, stats, textAlt, followers
 
     return (
             <div className="profile">
-                <div className="description">
-                    <img
+                <Box__one className="description">
+                    <Picture
                     src={avatar}
                     alt={textAlt}
                     className={(keys[3])}
@@ -17,22 +18,22 @@ const Description = ({username, tag, location, avatar, stats, textAlt, followers
                     <p className="name">{username}</p>
                     <p className="tag">{tag}</p>
                     <p className="location">{location}</p>
-                </div>
+                </Box__one>
 
-                <ul className={(keys[4])}>
-                    <li>
+                <Information_box className={(keys[4])}>
+                    <Information_box_children>
                         <span className="label">Followers:</span>
                         <span className="quantity">{followers}</span>
-                    </li>
-                    <li>
+                    </Information_box_children>
+                    <Information_box_children>
                         <span className="label">Views:</span>
                         <span className="quantity">{views}</span>
-                    </li>
-                    <li>
+                    </Information_box_children>
+                    <Information_box_children>
                         <span className="label">Likes:</span>
                         <span className="quantity">{likes}</span>
-                    </li>
-                </ul>
+                    </Information_box_children>
+                </Information_box>
             </div>
     )
 };
