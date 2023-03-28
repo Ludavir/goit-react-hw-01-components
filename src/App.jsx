@@ -17,7 +17,6 @@ function App() {
       tag={User.tag}
       location={User.location}
       avatar={User.avatar}
-      stats={User.stats}
       textAlt = "User avatar"
       followers={User.stats.followers}
       views={User.stats.views}

@@ -1,37 +1,36 @@
 import Data from './../json/data.json';
 import PropTypes from "prop-types";
+import { Box, List, ItemList } from './statisticsStyles';
 
 const ItemElement = () => {
     return (
         
         Data.map((element) => {
             return (
-                <li key={element.id} className='item'>
+                <ItemList key={element.id} className='item'>
                     <span className="label">{element.label}</span>
-                    <br />
                     <span className="percentage">{element.percentage}</span>
-                </li>
+                </ItemList>
             )
         })
         
     )
 };
 
-const Statistics = ({title, }) => {
+const Statistics = ({title}) => {
     return (
-        <section className="statistics">
+        <Box className="statistics">
             <h2 className="title">{title}</h2>
 
-            <ul className="stat-list">
+            <List className="stat-list">
                 <ItemElement/>
-            </ul>
-        </section>
+            </List>
+        </Box>
     )
 };
 
 Statistics.propTypes = {
     title: PropTypes.string.isRequired,
-    stats: PropTypes.object.isRequired,
 }
 
 export default Statistics

@@ -1,19 +1,37 @@
 import Friends from './../json/friends.json';
 import PropTypes from "prop-types";
+import { ItemList, List, Off, On } from './FriendListStyles';
 
-const FriendListItem = (avatar, name, isOnline, altText) => {
+
+const OnlineText = () => {
+    return (
+        <div>
+            <On className="status">•</On>
+        </div>
+    )
+}
+
+const OfflineText = () => {
+    return (
+        <div>
+            <Off className="status">•</Off>
+        </div>
+    )
+}
+
+
+const FriendListItem = (altText) => {
     
     return (
 
         Friends.map((element) => {
             return (
-                <li key={element.id} className='item'>
-                    <span className="status">
-                        {element.isOnline ? "Is ONline" : "is OFFLine"}
-                    </span>
+                <ItemList key={element.id} className='item'>
+
+                    {element.isOnline ? <OnlineText/> : <OfflineText/>}
                     <img className='avatar' src={element.avatar} alt={altText} width="48"/>
                     <p className="name">{element.name}</p>
-                </li>
+                </ItemList>
             )
         })
     )
@@ -22,21 +40,15 @@ const FriendListItem = (avatar, name, isOnline, altText) => {
 
 const FriendList = () => {
     return (
-        <ul className="friend-list">
+        <List className="friend-list">
             <FriendListItem
             avatar={Friends.avatar}
             name={Friends.name}
             isOnline={Friends.isOnline}
             altText="User avatar"
             />
-        </ul>
+        </List>
     )
 };
-
-FriendList.propTypes = {
-    avatar: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    isOnline: PropTypes.bool.isRequired,
-}
 
 export default FriendList
