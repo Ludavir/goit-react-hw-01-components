@@ -1,5 +1,4 @@
 import Friends from './../json/friends.json';
-import PropTypes from "prop-types";
 import { ItemList, List, Off, On } from './FriendListStyles';
 
 

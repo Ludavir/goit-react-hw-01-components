@@ -1,5 +1,5 @@
 import Transaction from '../json/transactions.json';
-import PropTypes from "prop-types";
+import { TableList, TableHead, TableBody} from './transactionStyles';
 
 const TransactionItem = () => {
     
@@ -19,18 +19,18 @@ const TransactionItem = () => {
 
 const TransactionHistory = () => {
     return (
-        <table className="transaction-history">
-            <thead>
+        <TableList className="transaction-history">
+            <TableHead>
                 <tr>
                     <th>Type</th>
                     <th>Amount</th>
                     <th>Currency</th>
                 </tr>
-            </thead>
-            <tbody>
-            <TransactionItem/>
-            </tbody>
-        </table>
+            </TableHead>
+            <TableBody>
+                <TransactionItem/>
+            </TableBody>
+        </TableList>
     )
 };
 
