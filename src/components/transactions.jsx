@@ -1,22 +1,6 @@
 import Transaction from '../json/transactions.json';
 import { TableList, TableHead, TableBody} from './transactionStyles';
 
-const TransactionItem = () => {
-    
-    return (
-        Transaction.map((element) => {
-            return (
-            <tr key={element.id}>
-                <td>{element.type}</td>
-                <td>{element.amount}</td>
-                <td>{element.currency}</td>
-            </tr>
-
-            )
-        })
-    )
-};
-
 const TransactionHistory = () => {
     return (
         <TableList className="transaction-history">
@@ -28,7 +12,17 @@ const TransactionHistory = () => {
                 </tr>
             </TableHead>
             <TableBody>
-                <TransactionItem/>
+                {
+                    Transaction.map((element) => {
+                        return (
+                        <tr key={element.id}>
+                            <td>{element.type}</td>
+                            <td>{element.amount}</td>
+                            <td>{element.currency}</td>
+                        </tr>
+                        )
+                    })
+                }
             </TableBody>
         </TableList>
     )
