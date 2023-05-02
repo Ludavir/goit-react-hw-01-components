@@ -2,7 +2,7 @@ import Data from './../json/data.json';
 import PropTypes from "prop-types";
 import { Box, List, ItemList } from './statisticsStyles';
 
-const Statistics = ({title}) => {
+const Statistics = ({title, stats}) => {
     return (
         <Box className="statistics">
 
@@ -25,6 +25,7 @@ const Statistics = ({title}) => {
 
 Statistics.propTypes = {
     title: PropTypes.string.isRequired,
+    stats: PropTypes.array.isRequired,
 }
 
 export default Statistics
