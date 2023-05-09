@@ -31,8 +31,6 @@ function App() {
       friends={Friends}/>
       <TransactionHistory
       items={Transactions}/>
-            <TransactionHistory
-      items={Transactions}/>
     </div>
 
   );
